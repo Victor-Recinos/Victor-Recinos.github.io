@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfolio | BTS SIO option SISR</title>
+<meta name="description" content="Portfolio d’un étudiant en BTS SIO option SISR : réalisations réseau et systèmes, certifications, veille technologique et tableau de compétences.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--vin:#4a0d1c;--vin2:#33091400;--fond:#33091a;--fond2:#3d0a1c;--or:#c9a24b;--blanc:#f8f2ea;--doux:#dccac3;
+--serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(4.5rem + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--fond);color:var(--blanc);font:400 1.0625rem/1.65 var(--sans)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+.w{max-width:70rem;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+section{padding:clamp(4rem,10vw,8rem) 0}
+section:nth-of-type(even){background:var(--fond2)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.05;margin:0}
+h2{font-size:clamp(2.2rem,5vw,3.6rem);color:var(--or);margin-bottom:2rem}
+h3{font-size:1.6rem}
+p{max-width:65ch}
+.doux{color:var(--doux)}
+
+header{position:sticky;top:0;z-index:10;background:rgba(51,9,26,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,162,75,.3);padding-top:env(safe-area-inset-top,0px)}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4.25rem}
+.logo{font:600 1.4rem var(--serif);color:var(--or);text-decoration:none;white-space:nowrap}
+nav{display:flex;gap:1.4rem;overflow-x:auto;scrollbar-width:none}
+nav a{font-size:.95rem;text-decoration:none;color:var(--doux);white-space:nowrap;padding:.25rem 0;border-bottom:1px solid transparent}
+nav a:hover{color:var(--blanc);border-color:var(--or)}
+
+#accueil{min-height:calc(100svh - 4.25rem);display:flex;align-items:center;background:
+radial-gradient(60rem 40rem at 85% 10%,rgba(122,24,50,.55),transparent 70%),var(--vin)}
+#accueil .nom{font-size:clamp(3.4rem,13vw,10rem);letter-spacing:-.02em;color:var(--blanc)}
+#accueil .nom span{display:block;color:var(--or);font-style:italic;font-weight:500}
+.role{margin:1.75rem 0 2.25rem;font-size:1.2rem;color:var(--doux);border-left:2px solid var(--or);padding-left:1rem}
+.btns{display:flex;flex-wrap:wrap;gap:.9rem}
+.btn{display:inline-block;padding:.85rem 1.6rem;border:1px solid var(--or);color:var(--or);text-decoration:none;font-weight:700;transition:background .2s,color .2s}
+.btn:hover{background:var(--or);color:var(--fond)}
+.btn.plein{background:var(--or);color:var(--fond)}
+.btn.plein:hover{background:var(--blanc);border-color:var(--blanc)}
+.hero-in{animation:ap .9s cubic-bezier(.22,.61,.36,1) both}
+@keyframes ap{from{opacity:0;transform:translateY(18px)}}
+
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem)}
+.opt{border-top:1px solid var(--or);padding-top:1.25rem}
+.opt.moi{border-top-width:4px}
+.opt .tag{color:var(--or);font-weight:700;font-size:.95rem}
+ul.metiers{padding-left:1.1rem;color:var(--doux)}
+
+.certs{list-style:none;margin:0;padding:0;border-top:1px solid rgba(201,162,75,.35)}
+.certs li{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1.1rem 0;border-bottom:1px solid rgba(201,162,75,.35)}
+.certs a{text-decoration:none;font:600 1.4rem var(--serif)}
+.certs a:hover{color:var(--or)}
+.certs .org{color:var(--doux)}
+
+.real{list-style:none;margin:0;padding:0}
+.real li{display:grid;grid-template-columns:5.5rem 1fr auto;gap:1.5rem;align-items:baseline;padding:1.6rem 0;border-top:1px solid rgba(201,162,75,.35)}
+.real li:last-child{border-bottom:1px solid rgba(201,162,75,.35)}
+.real .n{font:600 3rem/1 var(--serif);color:var(--or)}
+.real p{margin:.4rem 0 0;color:var(--doux)}
+.real .lien{color:var(--or);font-weight:700;white-space:nowrap}
+.real .att{opacity:.55}
+
+.tab-wrap{overflow-x:auto;margin-top:1.5rem;border:1px solid rgba(201,162,75,.35)}
+table{border-collapse:collapse;width:100%;min-width:52rem;font-size:.95rem}
+th,td{padding:.8rem;border:1px solid rgba(201,162,75,.25);text-align:center;vertical-align:middle}
+th{color:var(--or);font-weight:700;background:rgba(0,0,0,.2)}
+th:first-child,td:first-child{text-align:left;min-width:16rem}
+td.ok::after{content:"●";color:var(--or)}
+caption{caption-side:bottom;text-align:left;padding:.8rem;color:var(--doux);font-size:.9rem}
+
+.veille h3{margin:2.5rem 0 1rem;color:var(--blanc)}
+.sources{padding-left:1.1rem}
+.sources li{margin-bottom:.6rem;color:var(--doux)}
+.sources a{color:var(--or)}
+
+#contact{background:var(--vin)!important;text-align:center}
+#contact p{margin:0 auto 2rem}
+#contact .btns{justify-content:center}
+footer{padding:2rem 0;border-top:1px solid rgba(201,162,75,.3);font-size:.9rem;color:var(--doux)}
+footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem}
+footer a{margin-left:1rem}
+
+@media(max-width:760px){
+.duo{grid-template-columns:1fr}
+.real li{grid-template-columns:3.5rem 1fr}
+.real .lien{grid-column:2}
+.real .n{font-size:2.2rem}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-in{animation:none}.btn{transition:none}}
+</style>
+</head>
+<body>
+<header>
+ <div class="w">
+  <a class="logo" href="#accueil">Prénom Nom</a>
+  <nav aria-label="Navigation principale">
+   <a href="#apropos">À propos</a><a href="#bts">Le BTS SIO</a><a href="#certifications">Certifications</a><a href="#projets">Réalisations</a><a href="#veille">Veille</a><a href="#contact">Contact</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section id="accueil">
+ <div class="w hero-in">
+  <h1 class="nom">Prénom <span>Nom</span></h1>
+  <p class="role">Étudiant en BTS SIO, option SISR<br>Solutions d’infrastructure, systèmes et réseaux</p>
+  <div class="btns">
+   <a class="btn plein" href="#projets">Voir mes réalisations</a>
+   <a class="btn" href="cv.pdf" download>Télécharger mon CV</a>
+   <a class="btn" href="#contact">Me contacter</a>
+  </div>
+ </div>
+</section>
+
+<section id="apropos">
+ <div class="w">
+  <h2>À propos de moi</h2>
+  <p>Bonjour et bienvenue sur mon portfolio. Je m’appelle Prénom Nom.</p>
+  <p>Passionné par l’informatique, je me forme à l’administration des systèmes et des réseaux. <em class="doux">[Raconte ici ton parcours : ce qui t’a donné envie de choisir ce métier, ton établissement, ta ville.]</em></p>
+  <p>J’aime comprendre les besoins des utilisateurs et résoudre leurs problèmes techniques avec méthode. Ce portfolio présente mon parcours, mes compétences et les projets que j’ai réalisés.</p>
+ </div>
+</section>
+
+<section id="bts">
+ <div class="w">
+  <h2>Qu’est-ce que le BTS SIO ?</h2>
+  <p>Le Brevet de Technicien Supérieur Services Informatiques aux Organisations est une formation en deux ans. Elle prépare aux métiers de l’administration des réseaux ou du développement logiciel. Dès le deuxième semestre, elle se divise en deux options.</p>
+  <div class="duo" style="margin-top:3rem">
+   <article class="opt moi">
+    <span class="tag">Ma spécialité</span>
+    <h3>Option SISR</h3>
+    <p>Solutions d’Infrastructure, Systèmes et Réseaux : installer, configurer et sécuriser les équipements informatiques d’une entreprise, pour garantir le bon fonctionnement et la sécurité du système d’information.</p>
+    <ul class="metiers"><li>Administrateur systèmes et réseaux</li><li>Technicien de support et déploiement</li><li>Pilote d’exploitation</li><li>Technicien d’infrastructure</li><li>Technicien de production</li><li>Technicien réseaux</li></ul>
+   </article>
+   <article class="opt">
+    <h3>Option SLAM</h3>
+    <p>Solutions Logicielles et Applications Métiers : concevoir et développer des logiciels, des sites web ou des applications mobiles à partir d’un cahier des charges.</p>
+    <ul class="metiers"><li>Développeur web / mobile</li><li>Développeur d’applications</li><li>Analyste programmeur</li><li>Analyste d’applications ou d’études</li><li>Concepteur d’applications</li><li>Technicien d’études informatiques</li></ul>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="certifications">
+ <div class="w">
+  <h2>Mes certifications</h2>
+  <ul class="certs">
+   <li><a href="#">Networking Devices</a><span class="org">Cisco</span></li>
+   <li><a href="#">Introduction to Cybersecurity</a><span class="org">Cisco</span></li>
+   <li><a href="#">Atelier RGPD</a><span class="org">CNIL</span></li>
+   <li><span class="doux">Certification à venir, en préparation…</span></li>
+  </ul>
+ </div>
+</section>
+
+<section id="projets">
+ <div class="w">
+  <h2>Mes réalisations</h2>
+  <ol class="real" id="liste"></ol>
+  <h3 style="margin-top:4.5rem;color:var(--blanc)">Suivi des compétences SISR</h3>
+  <p class="doux">Tableau de synthèse de l’épreuve E5. Chaque point doré indique une compétence mobilisée dans la réalisation.</p>
+  <div class="tab-wrap" tabindex="0" role="region" aria-label="Tableau de compétences, défilement horizontal">
+   <table id="tab"></table>
+  </div>
+  <p style="margin-top:1.5rem"><a class="btn" href="tableau-synthese-e5.pdf">Ouvrir le tableau de synthèse (PDF)</a></p>
+ </div>
+</section>
+
+<section id="veille" class="veille">
+ <div class="w">
+  <h2>Veille informatique</h2>
+  <h3>Qu’est-ce que la veille technologique ?</h3>
+  <p>La veille technologique consiste à surveiller les évolutions techniques et les innovations d’un secteur : collecter, partager et diffuser des informations pour anticiper les changements et en mesurer l’impact sur l’organisation.</p>
+  <h3>Sujet : <span style="color:var(--or)">[ton sujet de veille]</span></h3>
+  <p class="doux">[Résume ici ton sujet : le contexte, les enjeux, ton analyse et ce que tu en retiens pour ton métier.]</p>
+  <h3>Sources</h3>
+  <ul class="sources">
+   <li><a href="#">[Titre de la source 1]</a>, éditeur, année</li>
+   <li><a href="#">[Titre de la source 2]</a>, éditeur, année</li>
+  </ul>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="w">
+  <h2>Contact</h2>
+  <p>Une question, une opportunité, l’envie d’échanger sur un projet ? N’hésitez pas à m’écrire.</p>
+  <div class="btns">
+   <a class="btn plein" href="mailto:prenom.nom@exemple.fr">M’écrire par e-mail</a>
+   <a class="btn" href="#">LinkedIn</a>
+   <a class="btn" href="#">GitHub</a>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="w">
+  <span>© Prénom Nom, étudiant BTS SIO SISR</span>
+  <span><a href="#">Mentions légales</a><a href="#">Politique de confidentialité</a></span>
+ </div>
+</footer>
+
+<script>
+// Une seule liste alimente les réalisations et le tableau. shortcut: données en dur, à éditer ici.
+// "c" = indices des compétences mobilisées (0 à 5), "url" = page de détail.
+const C=["Gérer le patrimoine informatique","Répondre aux incidents et demandes","Développer la présence en ligne","Travailler en mode projet","Mettre à disposition des services","Organiser son développement professionnel"];
+const R=[
+{t:"Création d’un labo d’expérimentation",d:"Infrastructure virtualisée sous Proxmox VE, segmentation réseau et sécurisation des flux avec pfSense.",url:"#",c:[0,4]},
+{t:"Déploiement d’une solution de helpdesk (GLPI)",d:"Solution ITSM centralisée pour l’inventaire du parc et le traitement des tickets d’assistance.",url:"#",c:[0,1]},
+{t:"Création et hébergement du portfolio",d:"Mise en production sécurisée avec zone démilitarisée (DMZ) et reverse proxy.",url:"#",c:[2,4]},
+{t:"Mise en place d’une solution de supervision",d:"Surveillance en temps réel de l’état de l’infrastructure pour anticiper les pannes.",url:"#",c:[0,4]},
+{t:"Projet à définir",d:"Description à définir.",c:[]},
+{t:"Projet à définir",d:"Description à définir.",c:[]}
+];
+const h=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+document.getElementById("liste").innerHTML=R.map((r,i)=>`<li${r.url?"":' class="att"'}><span class="n" aria-hidden="true">${i+1}</span><div><h3>Réalisation ${i+1} : ${h(r.t)}</h3><p>${h(r.d)}</p></div>${r.url?`<a class="lien" href="${r.url}">Voir la réalisation</a>`:""}</li>`).join("");
+document.getElementById("tab").innerHTML=`<thead><tr><th scope="col">Compétences</th>${C.map(c=>`<th scope="col">${c}</th>`).join("")}</tr></thead><tbody>${R.map((r,i)=>`<tr><th scope="row">Réalisation ${i+1} : ${h(r.t)}</th>${C.map((_,j)=>r.c.includes(j)?'<td class="ok"><span class="sr" style="position:absolute;left:-9999px">Oui</span></td>':"<td></td>").join("")}</tr>`).join("")}</tbody>`;
+</script>
+</body>
+</html>
